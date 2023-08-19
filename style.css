@@ -1,0 +1,114 @@
+body{
+    width: 1200px;
+}
+#top{
+    display: grid;
+    gap: 10px;
+    height: 30vh;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1,1fr);
+}
+#adress{
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+}
+#bell{
+    grid-column-start: 3;
+    grid-column-end: 3;
+}
+#main_body{
+    position: relative;
+
+}
+.box{
+    display: grid;
+    gap:10px;
+    height: 98vh;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(4,1fr);
+    margin-bottom: 5vh;
+    border-bottom: 1px solid;
+}
+.box1{
+    background-color: gray;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+.box2{
+    background-color: gray;
+    grid-column-start: 4;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.box3{
+    background-color: gray;
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.box4{
+    background-color: gray;
+    grid-column-start: 7;
+    grid-column-end: 11;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.box5{
+    background-color: gray;
+    grid-column-start: 4;
+    grid-column-end: 11;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+.write_btn{
+    background-color: orange;
+    width : 100px;
+    height: 70px;
+    left: 1500px;
+    text-align: center;
+    line-height : 70px;
+    bottom: 1px;
+    margin-bottom: 30px;
+    position: sticky;
+
+}
+
+
+.nav_box{
+    display: grid;
+    gap:10px;
+    height: 30vh;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(1,1fr);
+}
+.nav_box1{
+    background-color: green;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.nav_box2{
+    background-color: green;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+.nav_box3{
+    background-color: green;
+    grid-column-start: 5;
+    grid-column-end: 7;
+}
+.nav_box4{
+    background-color: green;
+    grid-column-start: 7;
+    grid-column-end: 9;
+}
+.nav_box5{
+    background-color: green;
+    grid-column-start: 9;
+    grid-column-end: 11;
+}

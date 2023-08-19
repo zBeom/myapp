@@ -1,0 +1,107 @@
+<!doctype HTML>
+<head>
+    <meta charset="utf-8">
+    <title>게시글</title>
+    <style>
+        #top{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(2,1fr);
+            width: 1280px;
+            height: 2112px;
+            background-color: gray;
+        }
+        .top_menu{
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .back_bnt{
+            left: 30px;
+            top:10px;
+            position: absolute;
+        }
+        .tako_btn{
+            left: 1150px;
+            top:10px;
+            position: absolute;
+        }
+        .photo{
+            grid-row-start: 1;
+            grid-column-start: 1;
+        }
+        #main_body{
+            position: relative;
+            margin-top: 30px;
+        }
+        .write_info{
+            display: grid;
+            gap:10px;
+            height: 130vh;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(13,1fr);
+            margin-left: 70px;
+        }
+        .writer_img{
+            background-color: green;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 12;
+        }
+        .writer_nick{
+            background-color: green;
+            grid-column-start: 6;
+            grid-column-end: 12;
+            grid-row-start: 2;
+            grid-row-end: 5;
+        }
+        .write_time{
+            background-color: green;
+            grid-column-start: 6;
+            grid-column-end: 12;
+            grid-row-start: 7;
+            grid-row-end: 10;
+        }
+        .writer_loc{
+            background-color: green;
+            grid-column-start: 1;
+            grid-column-end: 12;
+            grid-row-start:12;
+            grid-row-end: 14;
+        }
+        .loc{
+            width: auto;
+            height: 80px;
+            background-color: blue;
+            margin-bottom: 10px;
+        }
+        .describe{
+            width: auto;
+            height: 200px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div id = "top">
+        <div class ="top_menu">
+            <span class="back_bnt"><img src="C:\Users\orssa\OneDrive\바탕 화면\realplace\img\backBtn.png" style="width:70px" alt="뒤로가기 버튼"></span>
+            <span class="tako_btn"><img src="C:\Users\orssa\OneDrive\바탕 화면\realplace\img\takoyaggiBtn.png" alt="삭제등"></span>
+        </div>
+        <span class="photo">작성자 이미지</span>
+    </div>
+    <div id="main_body">
+        <div class = "write_info">
+            <div class="writer_img">writer_img</div>
+            <div class="writer_nick">writer_nick</div>
+            <div class="write_time">write_time</div>
+            <div class="writer_loc">작성자 상세위치</div>
+        </div>
+        <div class = writing>
+            <p>상세위치</p>
+            <div class="loc">loc</div>
+            <div class="describe">describe</div>
+        </div>
+    </div>
+</body>

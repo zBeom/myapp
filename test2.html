@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>글쓰기</title>
+        <style>
+            .photoFrame{
+                width: 500px;
+                height: 500px;
+              }
+              .photoFrame:hover{
+                cursor: pointer;
+              }
+        </style>
+<body>
+    <input type="file" id="fileInput"/>
+        <div id="pictures"></div>
+</body>
+<script type = 'text/javascript' src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type = 'text/javascript'>
+            var fileInput = document.getElementById("fileInput");
+            //값이 변경될때 호출 되는 이벤트 리스너
+            fileInput.addEventListener('change',function(e){
+                var file = e.target.files[0]; //선택된 파일
+                var reader = new FileReader();
+                reader.readAsDataURL(file); //파일을 읽는 메서드 
+
+                reader.onload = function(){
+                var photoFrame = document.createElement("div");
+                photoFrame.style = `background : url(${reader.result}); background-size : cover`;
+                photoFrame.className = "photoFrame";
+                document.getElementById("pictures").appendChild(photoFrame);
+                e.target.value = "";
+
+                photoFrame.addEventListener("click",function(){
+                    document.getElementById("pictures").removeChild(photoFrame);
+                })
+                }
+            })
+        </script>
+</html>

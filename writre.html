@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>글쓰기</title>
+        
+        <style>
+            .photoFrame{
+                width: 500px;
+                height: 700px;
+              }
+              .photoFrame:hover{
+                cursor: pointer;
+              }
+            #top{
+                display: grid;
+                grid-template-columns: repeat(2, 120px 300px);
+                grid-template-rows: repeat(1,1fr);
+                background-color: gray;
+            }
+            .writing_title{
+                margin-top: 50px;
+                font-size: 20px;
+
+            }
+            #body_img{
+                width: 1247px;
+                height: 1800px;
+            }
+            .img_modify_btn{
+                background-color: red;
+                width :100px;
+                height: 70px;
+                display : flex;
+                justify-content : center;
+                align-items : center;
+            }
+            .title_txt{
+                margin-bottom: 10px;
+            }
+            .title_box{
+                background-color: gray;
+                width: auto;
+                height: 30px;
+            }
+            .oppo_txt{
+                margin-bottom: 10px;
+            }
+            .oppo_box{
+                background-color: gray;
+                width: auto;
+                height: 200px;
+            }
+            .my_loc_txt{
+                margin-bottom: 10px;
+            }
+            .my_loc_box{
+                background-color: gray;
+                width: auto;
+                height: 30px;
+            }
+            .introduce_box{
+                background-color: gray;
+                width: auto;
+                height: 30px;
+            }
+            .submit{
+                background-color: green;
+                margin-top: 30px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="top">
+            <button onclick="history.back()"> <div class="back_btn">
+            <img src="C:\Users\orssa\OneDrive\바탕 화면\realplace\img\backBtn.png" 
+            style="width: 100px;" alt="뒤로가기"></div> </button>
+            <div class="writing_title">글쓰기</div>
+        </div>
+        <form action="">
+            <input type="file" id="fileInput"/>
+            <div id="pictures"></div>
+            <div class="body_img_area" style="position:relative">
+                <div id="body_img" style="position: absolute;"></div>
+
+                <!-- <div class="img_modify_btn" style="position: absolute;">수정</div> -->
+            </div>
+
+            <p style="margin-top: 1800px">*필수항목 입니다.</p>
+            <div id="describe">
+                <div class="title">
+                    <form action="">
+                        <p class="title_txt">제목</p>
+                        <div class="title_box"><input type="text" name="tilte"></div>
+                    </form>
+                </div>
+                <div class="oppo">
+                    <p class="oppo_txt">상대 인상착의</p>
+                    <div class="oppo_box"><input type="text" name="oppo_txt"></div>
+                </div>
+                <div class="my_loc">
+                    <p class="my_loc_txt">본인 상세위치</p>
+                    <div class="my_loc_box"><input type="text" name ="my_loc_txt"></div>
+                </div>
+                <div class="introduce">
+                    <p class="introduce_txt">설명</p>
+                    <div class="introduce_box"><input type="text" name ="introduce_txt"></div>
+                </div>
+                <div class = "submit">
+                    <div style="text-align: center;">제출</div>
+
+                </div>
+            </div>
+        </form>
+    </body>
+    <script type = 'text/javascript' src="code.jquery.com_jquery-3.7.0.min.js"></script>
+        <script type = 'text/javascript'>
+            var fileInput = document.getElementById("fileInput");
+            //값이 변경될때 호출 되는 이벤트 리스너
+            fileInput.addEventListener('change',function(e){
+                var file = e.target.files[0]; //선택된 파일
+                var reader = new FileReader();
+                reader.readAsDataURL(file); //파일을 읽는 메서드 
+
+                reader.onload = function(){
+                var photoFrame = document.createElement("div");
+                photoFrame.style = `background : url(${reader.result}); background-size : contain`;
+                photoFrame.className = "photoFrame";
+                document.getElementById("pictures").appendChild(photoFrame);
+                e.target.value = "";
+
+                photoFrame.addEventListener("click",function(){
+                    document.getElementById("pictures").removeChild(photoFrame);
+                })
+                }
+            })
+        </script>
+</html>
